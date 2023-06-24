@@ -10,7 +10,9 @@ export default defineConfig({
   base: "/frontendmentor",
   integrations: [
     react(),
-    tailwind(),
+    tailwind({
+      applyBaseStyles: false,
+    }),
     image({
       serviceEntryPoint: "@astrojs/image/sharp",
     }),
