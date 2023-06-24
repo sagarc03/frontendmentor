@@ -1,7 +1,8 @@
 import { useState } from "react";
+
 import { Calendar } from "@/components/ui/calendar";
 
-const Cal = () => {
+const ResultSummary = () => {
   const [date, setDate] = useState<Date | undefined>(new Date());
 
   return (
@@ -13,5 +14,6 @@ const Cal = () => {
     />
   );
 };
+ResultSummary.displayName = "ResultSummary";
 
-export { Cal };
+export { ResultSummary };

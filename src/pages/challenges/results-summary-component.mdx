@@ -1,0 +1,11 @@
+---
+layout: ../../layouts/ChallengeLayout.astro
+title: Result Summary Challenges
+---
+import { ResultSummary } from "@/challenges/results-summary-component";
+
+<main
+    class="container mx-auto my-20 flex flex-col items-center justify-center"
+>
+    <ResultSummary client:load />
+</main>

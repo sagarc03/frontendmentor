@@ -1,6 +1,9 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import { Cal } from "@/cal";
+import Layout from "@/layouts/Layout.astro";
+interface Frontmatter {
+  title: string;
+}
+const challenges = await Astro.glob<Frontmatter>("./challenges/*.mdx");
 ---
 
 <Layout title="Welcome to Astro.">
@@ -8,6 +11,14 @@ import { Cal } from "@/cal";
     class="container mx-auto my-20 flex flex-col items-center justify-center"
   >
     <h1 class="my-20">Welcome to Astro</h1>
-    <Cal client:load />
+    <ul>
+      {
+        challenges.map(({ url, frontmatter: { title } }) => (
+          <li>
+            <a href={url}>{title}</a>
+          </li>
+        ))
+      }
+    </ul>
   </main>
 </Layout>
